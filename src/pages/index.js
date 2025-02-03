@@ -2,6 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import "@/styles/home.css";
 import { Nav } from "rsuite";
+import { Grid, Row, Col } from "rsuite";
+import { FlexboxGrid } from "rsuite";
 import GlobalIcon from "@rsuite/icons/Global";
 import StarIcon from "@rsuite/icons/Star";
 import SortUpIcon from "@rsuite/icons/SortUp";
@@ -10,6 +12,7 @@ import GridIcon from "@rsuite/icons/Grid";
 import CopyIcon from "@rsuite/icons/Copy";
 import ShieldIcon from "@rsuite/icons/Shield";
 import { AvatarGroup, Avatar } from "rsuite";
+import { Divider } from "rsuite";
 
 export default function Home() {
   const users = [
@@ -28,7 +31,7 @@ export default function Home() {
       <div className="header">
         <div className="brand">
           <h1 className="brand-title">Aston Capital</h1>
-          <Nav style={{fontWeight: 500}}>
+          <Nav style={{ fontWeight: 500 }}>
             <Nav.Item href="#features">Features</Nav.Item>
             <Nav.Item href="#values">Values</Nav.Item>
             <Nav.Item href="#numbers">Numbers</Nav.Item>
@@ -290,46 +293,205 @@ export default function Home() {
       <section id="numbers">
         <div className="numbers-container">
           <div className="numbers-item1">
-        <div>
-          <p style={{ fontSize: "120px", lineHeight: 1.2, letterSpacing: '-1.2px'}}>$14B</p>
-          <p style={{fontSize:"24px", fontWeight: 500, lineHeight: 1.25}}>Funds and syndicates</p>
-        </div>
-        <div>
-          <p style={{ fontSize: "120px", lineHeight: 1.2, letterSpacing: '-1.2px' }}>23k+</p>
-          <p  style={{fontSize:"24px", fontWeight: 500, lineHeight: 1.25}}>Raised by active startups</p>
-        </div>
-        </div>
-        <div className="numbers-item3">
-          <h3 style={{textTransform: 'uppercase', fontWeight: 400}}>Numbers</h3>
-          <h2 style={{fontSize: '40px', fontWeight: 500, lineHeight: 1.2}}>Market and build the solutions</h2>
-        </div>
+            <div>
+              <p
+                style={{
+                  fontSize: "120px",
+                  lineHeight: 1.2,
+                  letterSpacing: "-1.2px",
+                }}
+              >
+                $14B
+              </p>
+              <p
+                style={{ fontSize: "24px", fontWeight: 500, lineHeight: 1.25 }}
+              >
+                Funds and syndicates
+              </p>
+            </div>
+            <div>
+              <p
+                style={{
+                  fontSize: "120px",
+                  lineHeight: 1.2,
+                  letterSpacing: "-1.2px",
+                }}
+              >
+                23k+
+              </p>
+              <p
+                style={{ fontSize: "24px", fontWeight: 500, lineHeight: 1.25 }}
+              >
+                Raised by active startups
+              </p>
+            </div>
+          </div>
+          <div className="numbers-item3">
+            <h3 style={{ textTransform: "uppercase", fontWeight: 400 }}>
+              Numbers
+            </h3>
+            <h2 style={{ fontSize: "40px", fontWeight: 500, lineHeight: 1.2 }}>
+              Market and build the solutions
+            </h2>
+          </div>
         </div>
       </section>
       <section id="faq">
         <div className="faq-container">
           <div>
-          <h5>Faq</h5>
-          <p>Frequently asked questions</p>
+            <h5>Faq</h5>
+            <p>Frequently asked questions</p>
           </div>
-          <div>
-          </div>
+          <div></div>
         </div>
       </section>
       <div className="cta-container">
         <div className="cta">
-        <div className="cta-txt">
-          <h3>Change the way you use your <i>money</i></h3>
-          <p>Join over million people who choose Aston Capital for fast and secure future banking.</p>
-          <button>Get Started Now</button>
-        </div>
-        <div className="cta-ornaments">
-          <div>
-          <StarIcon style={{ fontSize: "44px" }} />
-          <StarIcon style={{ fontSize: "44px" }} />
+          <div className="cta-txt">
+            <h3
+              style={{
+                fontSize: "72px",
+                letterSpacing: -0.72,
+                fontWeight: 500,
+                width: "750px",
+              }}
+            >
+              Change the way you use your{" "}
+              <span
+                style={{
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                  letterSpacing: -0.74,
+                  fontSize: "74px",
+                }}
+              >
+                money
+              </span>
+            </h3>
+            <p style={{ fontSize: "20px", maxWidth: "400px" }}>
+              Join over million people who choose Aston Capital for fast and
+              secure future banking.
+            </p>
+            <button className="cta-btn">Get Started Now</button>
           </div>
-          <Image src="/img/dollars.jpg" alt="dollar notes" height={64} width={64} />
+          <div className="cta-ornaments">
+            <div className="ornament1">
+              <StarIcon style={{ width: 160, height: 160 }} />
+              <StarIcon style={{ width: 160, height: 160 }} />
+            </div>
+            <div className="ornament2">
+            <Image  className="cta-img"
+              src="/img/dollars.jpg"
+              alt="dollar notes"
+              height={200}
+              width={200}
+             
+            />
+            </div>
+          </div>
         </div>
       </div>
+      <div className="footer-container">
+        <div className="footer-top" style={{marginBottom: '50px', display: 'flex', justifyContent: 'space-between'}}>
+          <div className="grid-links">
+            <Grid fluid>
+              <Row gutter={30}>
+                <Col xs={6}>
+                  <h4>Account</h4>
+                  <div className="links-box">
+                    <a className="footer-links" href="#">
+                      Saving
+                    </a>
+                    <a className="footer-links" href="#">
+                      Join Accounts
+                    </a>
+                    <a className="footer-links" href="#">
+                      Crypto
+                    </a>
+                    <a className="footer-links" href="#">
+                      Freelance
+                    </a>
+                    <a className="footer-links" href="#">
+                      Commodities
+                    </a>
+                  </div>
+                </Col>
+                <Col xs={6}>
+                  <h4>Help</h4>
+                  <div className="links-box">
+                    <a className="footer-links" href="#">
+                      Customer Help
+                    </a>
+                    <a className="footer-links" href="#">
+                      Community
+                    </a>
+                    <a className="footer-links" href="#">
+                      Blog
+                    </a>
+                  </div>
+                </Col>
+                <Col xs={6}>
+                  <h4>Finance</h4>
+                  <div className="links-box">
+                    <a className="footer-links" href="#">
+                      Cards
+                    </a>
+                    <a className="footer-links" href="#">
+                      Linked Accounts
+                    </a>
+                    <a className="footer-links" href="#">
+                      Payment
+                    </a>
+                    <a className="footer-links" href="#">
+                      Freelance
+                    </a>
+                    <a className="footer-links" href="#">
+                      Commodities
+                    </a>
+                  </div>
+                </Col>
+                <Col xs={6}>
+                  <h4>Company</h4>
+                  <div className="links-box">
+                    <a className="footer-links" href="#">
+                      About Us
+                    </a>
+                    <a className="footer-links" href="#">
+                      Contact
+                    </a>
+                    <a className="footer-links" href="#">
+                      Sustainability
+                    </a>
+                    <a className="footer-links" href="#">
+                      Career
+                    </a>
+                  </div>
+                </Col>
+              </Row>
+            </Grid>
+          </div>
+          <div>
+            <h1 style={{fontSize: '40px'}}>Aston Capital</h1>
+          </div>
+        </div>
+        <Divider style={{ color: "#252a1c" }} />
+        <div className="footer-bottom" style={{marginBottom: '50px', marginTop: '50px'}}>
+          <FlexboxGrid justify="space-between">
+            <FlexboxGrid.Item>
+            <div>
+              <p style={{ fontWeight: 500 }}>&#169; Aston Capital Ltd. 2025</p>
+            </div>
+            </FlexboxGrid.Item>
+            <FlexboxGrid.Item>
+            <div className="policy-links">
+              <a className="footer-links" href="#">Privacy Policy</a>
+              <a className="footer-links" href="#">Terms of Use</a>
+              <a className="footer-links"
+              href="#">Disclosure</a>
+            </div>
+            </FlexboxGrid.Item>
+          </FlexboxGrid>
+        </div>
       </div>
     </>
   );
