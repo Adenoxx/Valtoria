@@ -11,6 +11,7 @@ import TrendIcon from "@rsuite/icons/Trend";
 import GridIcon from "@rsuite/icons/Grid";
 import CopyIcon from "@rsuite/icons/Copy";
 import ShieldIcon from "@rsuite/icons/Shield";
+import MenuIcon from '@rsuite/icons/Menu';
 import { AvatarGroup, Avatar } from "rsuite";
 import { Divider } from "rsuite";
 
@@ -31,16 +32,26 @@ export default function Home() {
       <div className="header">
         <div className="brand">
           <h1 className="brand-title">Aston Capital</h1>
-          <Nav style={{ fontWeight: 500 }}>
+        </div>
+        <MenuIcon className="menu-icon" style={{display: 'none'}} />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "950px",
+          }}
+        >
+          <Nav className="nav-items" style={{display: 'flex',  justifyContent: "space-between",  gap: '1.5rem',  fontWeight: 600,}}>
             <Nav.Item href="#features">Features</Nav.Item>
             <Nav.Item href="#values">Values</Nav.Item>
             <Nav.Item href="#numbers">Numbers</Nav.Item>
             <Nav.Item>FAQ</Nav.Item>
           </Nav>
-        </div>
-        <div className="btns">
-          <button className="login">Login</button>
-          <button className="signUp">Sign Up</button>
+          <div className="btns" style={{alignSelf: ''}} >
+            <button className="login">Login</button>
+            <button className="signUp">Sign Up</button>
+          </div>
         </div>
       </div>
 
@@ -338,11 +349,112 @@ export default function Home() {
       </section>
       <section id="faq">
         <div className="faq-container">
-          <div>
-            <h5>Faq</h5>
-            <p>Frequently asked questions</p>
-          </div>
-          <div></div>
+          <Grid fluid>
+            <Row>
+              <Col xs={12}>
+                <div>
+                  <h3 style={{ textTransform: "uppercase", fontWeight: 700 }}>
+                    Faq
+                  </h3>
+                  <h2 style={{ fontSize: "60px", fontWeight: 600 }}>
+                    Frequently asked questions?
+                  </h2>
+                </div>
+              </Col>
+              <Col xs={12}>
+                <div className="faq-icon">
+                  <p>How can I do bank transfer?</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    />
+                  </svg>
+                </div>
+                <Divider />
+                <div className="faq-icon">
+                  <p>What is the scheduled payments feature?</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    />
+                  </svg>
+                </div>
+                <Divider />
+                <div className="faq-icon">
+                  <p>How can I reactivate a terminated card?</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    />
+                  </svg>
+                </div>
+                <Divider />
+                <div className="faq-icon">
+                  <p>How about with a refund?</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    />
+                  </svg>
+                </div>
+                <Divider />
+                <div className="faq-icon">
+                  <p>How can I add money to my account</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    />
+                  </svg>
+                </div>
+                <Divider />
+              </Col>
+            </Row>
+          </Grid>
         </div>
       </section>
       <div className="cta-container">
@@ -380,19 +492,26 @@ export default function Home() {
               <StarIcon style={{ width: 160, height: 160 }} />
             </div>
             <div className="ornament2">
-            <Image  className="cta-img"
-              src="/img/dollars.jpg"
-              alt="dollar notes"
-              height={200}
-              width={200}
-             
-            />
+              <Image
+                className="cta-img"
+                src="/img/dollars.jpg"
+                alt="dollar notes"
+                height={200}
+                width={200}
+              />
             </div>
           </div>
         </div>
       </div>
       <div className="footer-container">
-        <div className="footer-top" style={{marginBottom: '50px', display: 'flex', justifyContent: 'space-between'}}>
+        <div
+          className="footer-top"
+          style={{
+            marginBottom: "50px",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
           <div className="grid-links">
             <Grid fluid>
               <Row gutter={30}>
@@ -471,24 +590,34 @@ export default function Home() {
             </Grid>
           </div>
           <div>
-            <h1 style={{fontSize: '40px'}}>Aston Capital</h1>
+            <h1 style={{ fontSize: "40px" }}>Aston Capital</h1>
           </div>
         </div>
         <Divider style={{ color: "#252a1c" }} />
-        <div className="footer-bottom" style={{marginBottom: '50px', marginTop: '50px'}}>
+        <div
+          className="footer-bottom"
+          style={{ marginBottom: "50px", marginTop: "50px" }}
+        >
           <FlexboxGrid justify="space-between">
             <FlexboxGrid.Item>
-            <div>
-              <p style={{ fontWeight: 500 }}>&#169; Aston Capital Ltd. 2025</p>
-            </div>
+              <div>
+                <p style={{ fontWeight: 500 }}>
+                  &#169; Aston Capital Ltd. 2025
+                </p>
+              </div>
             </FlexboxGrid.Item>
             <FlexboxGrid.Item>
-            <div className="policy-links">
-              <a className="footer-links" href="#">Privacy Policy</a>
-              <a className="footer-links" href="#">Terms of Use</a>
-              <a className="footer-links"
-              href="#">Disclosure</a>
-            </div>
+              <div className="policy-links">
+                <a className="footer-links" href="#">
+                  Privacy Policy
+                </a>
+                <a className="footer-links" href="#">
+                  Terms of Use
+                </a>
+                <a className="footer-links" href="#">
+                  Disclosure
+                </a>
+              </div>
             </FlexboxGrid.Item>
           </FlexboxGrid>
         </div>

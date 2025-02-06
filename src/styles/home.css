@@ -16,6 +16,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 64px;
+  gap: 1rem
 }
 
 .brand {
@@ -378,7 +379,17 @@ body {
   margin-left: 50px;
 }
 
+.faq-icon {
+  display: flex; 
+  justify-content: space-between;
+  font-size: 28px;
+  font-weight: 500;
+}
 
+.faq-icon svg {
+  height: 24px;
+  width: 24px;
+}
 
 .grid-links {
   width: 750px;
@@ -404,3 +415,21 @@ body {
   font-weight: 500
 }
 
+/* Responsiveness */
+@media screen and (max-width: 375px) {
+  .header {
+flex-direction: column;
+align-items: flex-start;
+  }
+   .nav-items {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+/*  
+  .hero-section {
+    display: block;
+  } */
+}
