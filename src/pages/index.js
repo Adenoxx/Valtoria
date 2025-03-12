@@ -1,9 +1,13 @@
 import Head from "next/head";
+import {useState} from "react";
 import Image from "next/image";
 import "@/styles/home.css";
 import { Nav } from "rsuite";
 import { Grid, Row, Col } from "rsuite";
 import { FlexboxGrid } from "rsuite";
+import { Accordion } from 'rsuite';
+import { AvatarGroup, Avatar } from "rsuite";
+import { Divider } from "rsuite";
 import GlobalIcon from "@rsuite/icons/Global";
 import StarIcon from "@rsuite/icons/Star";
 import SortUpIcon from "@rsuite/icons/SortUp";
@@ -12,8 +16,6 @@ import GridIcon from "@rsuite/icons/Grid";
 import CopyIcon from "@rsuite/icons/Copy";
 import ShieldIcon from "@rsuite/icons/Shield";
 import MenuIcon from '@rsuite/icons/Menu';
-import { AvatarGroup, Avatar } from "rsuite";
-import { Divider } from "rsuite";
 
 export default function Home() {
   const users = [
@@ -21,6 +23,7 @@ export default function Home() {
     { avatar: "https://i.pravatar.cc/150?u=6", name: "Mike Doe" },
     { avatar: "https://i.pravatar.cc/150?u=7", name: "Jane Doe" },
   ];
+
   return (
     <>
       <Head>
@@ -31,10 +34,14 @@ export default function Home() {
       </Head>
       <div className="header">
         <div className="brand">
+          <div>
           <h1 className="brand-title">Aston Capital</h1>
+          </div>
+          <div>
+          <MenuIcon className="menu-icon"/>
+          </div>
         </div>
-        <MenuIcon className="menu-icon" style={{display: 'none'}} />
-        <div
+        <div className="nav-btns"
           style={{
             display: "flex",
             justifyContent: "space-between",
@@ -42,13 +49,13 @@ export default function Home() {
             width: "950px",
           }}
         >
-          <Nav className="nav-items" style={{display: 'flex',  justifyContent: "space-between",  gap: '1.5rem',  fontWeight: 600,}}>
+          <Nav className="nav-items">
             <Nav.Item href="#features">Features</Nav.Item>
             <Nav.Item href="#values">Values</Nav.Item>
             <Nav.Item href="#numbers">Numbers</Nav.Item>
             <Nav.Item>FAQ</Nav.Item>
           </Nav>
-          <div className="btns" style={{alignSelf: ''}} >
+          <div className="btns" >
             <button className="login">Login</button>
             <button className="signUp">Sign Up</button>
           </div>
@@ -60,16 +67,14 @@ export default function Home() {
           <p className="act">Try it now!</p>
           <h2 className="hero-title">
             Change the way
-            <br /> you use your
-            <br />
-            <i>money</i>
+             you use your <i>money</i>
           </h2>
           <p className="hero-text">
-            From your everyday spending, to planning for your future <br /> with
-            savings and investments, Aston capital helps you get <br /> more for
-            your money
+            From your everyday spending, to planning for your future with
+            savings and investments, Aston capital helps you get more from
+            your money.
           </p>
-          <div>
+          <div className="btn-container">
             <button className="hero-btn">Get Started Now</button>
           </div>
         </div>
@@ -159,12 +164,12 @@ export default function Home() {
       </div>
       <section id="features">
         <div className="brand-features">
-          <h3 className="title">FEATURES</h3>
+          <h3 className="features-title">FEATURES</h3>
           <h2 className="features-text">
-            One app for all your <br /> money things
+            One app for all your money things
           </h2>
           <p className="features-text2">
-            Remove all the friction that stands in the way of your money <br />{" "}
+            Remove all the friction that stands in the way of your money
             goals
           </p>
         </div>
@@ -189,14 +194,14 @@ export default function Home() {
             <h3>Send across the globe </h3>
             <div className="feat2-ornaments">
               <Image src="/img/dollars2.png" alt="" height={250} width={150} />
-              <GlobalIcon
+              <GlobalIcon className="globe"
                 style={{
                   fontSize: "100px",
                   color: "#161612",
                   alignSelf: "center",
                 }}
               />
-              <Image
+              <Image className="contry-flg"
                 src="/img/countries.png"
                 alt=""
                 height={50}
@@ -214,7 +219,7 @@ export default function Home() {
             <h2>Make your spend, Well-spent</h2>
           </div>
           <div>
-            <p>
+            <p className="values-intro2">
               Manages a diversified group of specialized private credit brands
               with efficient tech-enabled processes
             </p>
@@ -222,7 +227,7 @@ export default function Home() {
         </div>
         <div className="brand-vals">
           <div className="val-1">
-            <GridIcon style={{ fontSize: "52px", color: "" }} />
+            <GridIcon style={{ fontSize: "52px"}} />
             <div className="val1-txt">
               <h5 style={{ fontWeight: 600 }}>Transparency</h5>
               <p>
@@ -362,96 +367,36 @@ export default function Home() {
                 </div>
               </Col>
               <Col xs={12}>
-                <div className="faq-icon">
-                  <p>How can I do bank transfer?</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 4.5v15m7.5-7.5h-15"
-                    />
-                  </svg>
-                </div>
-                <Divider />
-                <div className="faq-icon">
-                  <p>What is the scheduled payments feature?</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 4.5v15m7.5-7.5h-15"
-                    />
-                  </svg>
-                </div>
-                <Divider />
-                <div className="faq-icon">
-                  <p>How can I reactivate a terminated card?</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 4.5v15m7.5-7.5h-15"
-                    />
-                  </svg>
-                </div>
-                <Divider />
-                <div className="faq-icon">
-                  <p>How about with a refund?</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 4.5v15m7.5-7.5h-15"
-                    />
-                  </svg>
-                </div>
-                <Divider />
-                <div className="faq-icon">
-                  <p>How can I add money to my account</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 4.5v15m7.5-7.5h-15"
-                    />
-                  </svg>
-                </div>
-                <Divider />
+                <div className="faqs">
+                  <Accordion>
+                  <Accordion.Panel header="How to do a bank transfer" >   
+                    <p className="faq-text">
+                    Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank ATM.
+                    </p>
+                  </Accordion.Panel> 
+                  <Accordion.Panel header="What is the scheduled payments feature?" >   
+                    <p className="faq-text">
+                    The scheduled payments feature allows you to manage all of your subscriptions or recurring payments in one place. This way, you can view details for every payment, which include the amount, frequency, payment dates etc.
+                    </p>
+                  </Accordion.Panel> 
+                  <Accordion.Panel header="How can I reactivate a terminated card?" >   
+                    <p className="faq-text">
+                    Depending on the reason for termination, the bank may have specific steps for reactivation, such as signing new terms, updating details, or reissuing a new card.
+                    </p>
+                  </Accordion.Panel> 
+                  <Accordion.Panel header="How about with a refund?" >   
+                    <p className="faq-text">
+                    Ensure that the product or service you want a refund for meets the refund criteria set by the company. Refunds can take several days or even weeks to reflect in your account, depending on the payment method and the company’s processing times.
+                    </p>
+                  </Accordion.Panel> 
+                  <Accordion.Panel header="How can I add money to my account?" >   
+                    <p className="faq-text">
+                    Describing the various ways to add funds, such as bank transfers, cash deposits, using a debit or credit card, or mobile check deposits.
+                    </p>
+                  </Accordion.Panel> 
+                  </Accordion>
+                  <Divider />
+                  </div>
               </Col>
             </Row>
           </Grid>
